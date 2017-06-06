@@ -1,0 +1,9 @@
+miscdoc/
+attic/
+.cask/
+*~
+.DS_Store
+*.aux
+*.log
+*.dvi
+.org-timestamps/

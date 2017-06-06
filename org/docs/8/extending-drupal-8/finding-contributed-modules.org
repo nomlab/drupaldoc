@@ -1,0 +1,155 @@
+#+TITLE: Finding Contributed Modules
+#+SETUPFILE: ../../../options/default.org
+
++ このページの原文: [[https://www.drupal.org/docs/8/extending-drupal-8/finding-contributed-modules][Finding Contributed Modules]]
+
+* Finding Contributed Modules
+  *この文書は不完全です．更なる情報を追加してください*
+
+  このページは，長すぎる以下のページからコンテンツを移動すべく用意した一時的なスタブです．
+  https://www.drupal.org/docs/8/extending-drupal-8/installing-contributed-modules-find-import-enable-configure-drupal-8
+
+  コントリビュートされたモジュールを探すには，メインページ
+  drupal.org から [[https://www.drupal.org/project/project_module][Module project]] のメインページに行きます．
+
+  コントリビュートされたテーマを探すには，[[https://www.drupal.org/project/project_theme][Theme project]] から探すといいでしょう．
+  drupal.org のメインセクションである 'Download & Extend' の 'Modules' タブにあります．
+
+  *Core compatibility: "8.x"* - ページトップから3番目の項目，
+  'Core compatibility' を "8.x" に設定します．
+
+  *Other search options:* 自由に他の検索項目を変えてください．
+  また，いくつかのキーワードを 'Search modules' テキストエリアに入れてもいいでしょう．
+
+  'Sort by' の設定は，デフォルトでは，"Most installed" です．
+  つまり，人気順に並んでいます．
+
+  "Search" ボタンをクリックします．
+
+  検索結果のページにおいて，各モジュール(もしくはテーマ) の 'name' の部分は，
+  ホームページへのリンクで， drupal.org サイトからは，
+  プロジェクトページとして認識されています．
+
+  詳細を知るには，名前のをクリックしてください．
+
+** Module project page
+
+   Module project pages vary in depth of detail, however, because the
+   content of each project page is created by one of the module's
+   developers.
+
+   *The project page is usually worth reading carefully.*
+
+   Among other things, if the module is dependent on another module(s), or
+   possibly an extra 'library'(s), that information will be posted. It is
+   not critical if you forget about a module or library dependency,
+   however, because later when you try to enable or use the module, you
+   will get a notice about what you are missing.
+
+*** 'Downloads' section
+
+   A project page will always include links to get the various versions
+   that are available for that module.
+
+*** 'Issues for...':
+
+    The module's project page will always include links under the heading
+    'Issues for...'. Those links are in the right-hand column when your
+    browser window is wide enough, or they are near the page bottom under
+    the 'Downloads' and 'Maintainers for...' sections when your browser
+    window is narrower.
+
+    The 'Issues for...' links take you to the issues queue for that specific
+    module project. The issues queue is the official place where all of the
+    problems ('Bug report'), support requests, ('Support request') and
+    new-feature requests ('Feature request') can be found and searched for.
+
+    So, if you run into problems with a module, search the module's issue
+    queue. If your problem (or request) has not already been addressed, post
+    your question or issue using the link 'Create a new issue', and someone
+    will try to help you out.
+
+*** Resources:
+
+    Just under the 'Issues...' section, in the section under the heading
+    'Resources', I always look for the link 'Read documentation'. That link
+    will not always exist, but if it is there, it is a link to what the
+    project's developers consider the most useful information for their
+    project.
+
+    The 'Read documentation' link might take you to a page on drupal.org in
+    the 'Documentation' section, or the link might take you to a page off of
+    the drupal.org site.
+
+    Generally speaking though, every contrib module will have a "README.txt"
+    file and/or an "INSTALL.txt" file in its top-level folder that you can
+    view after you download the module, or after you import it into your
+    site.
+
+    The various Documentation resources available for a module (or theme)
+    are discussed elsewhere. For now, note that you can view any project's
+    'README.txt' file, or see its other documentation without downloading
+    anything, by following the instructions below in the 'Module
+    documentation and help'
+
+** Understand the various module versions available
+   On the "project" page, see the section 'Downloads' under which are
+   the sub-headings 'Recommended releases', 'Other releases', and
+   'Development releases'.
+
+   The picture below is for Drupal 7, but hopefully you get the idea.
+   [[https://www.drupal.org/files/versions.png]]
+
+   The version you choose must be compatible with the version of Drupal
+   you are using. So since you are using Drupal 8, you can only use a
+   'Version' that begins with '8.x-...'.
+
+*** 'Recommended releases'
+
+    Look for the uppermost 'Version' that you can find for
+    Drupal 8. That is the version that you should try first, and
+    hopefully it will be under the sub-heading 'Recommended releases',
+    which means that it is stable enough to use on a live site (also
+    known as a 'production' site).
+
+*** 'Other releases'
+
+    If no 'Recommended releases' is available, your next best option is to
+    try an 'Other releases' version, if available.
+
+    'Other releases' are generally on their way to becoming a 'Recommended
+    releases' version.
+
+    But, on the other hand, on a rare occasion an 'Other releases' version
+    is an older stable version of the module before major changes were made
+    to it. In that somewhat rare case, the older stable version will have
+    been moved from the 'recommended releases' when the newer version was
+    ready. One reason for keeping an older version around in the 'Other
+    releases' section would be if some other separate module project were
+    dependent on the older 'Other releases' version for that dependent
+    module to work properly.
+
+*** 'Development releases'
+
+    The 'Development releases' version of the module is in some stage of
+    development. It is the current 'state of the art of development'
+    version, as the developers are working out bugs, or are adding new
+    features.
+
+    Be aware that the 'development release' might be being prepared for a
+    future version of Drupal. Taking Drupal 8, for example, even though
+    today Drupal 8.2 is the current recommended version of Drupal 8 core,
+    the module's 'development release' might be being prepared for future
+    use with the Drupal core version 8.2, or 8.3, which will have features
+    not found in the current 8.1 core version.
+
+*** 'Version' column
+
+    このカラムは，その行に示されているモジュールのバージョンです．
+
+    バージョンのナンバリングスキームの詳細については，
+    drupal.org の 'Version numbers' を参照してください．
+
+*** 'Download' column
+
+    このカラムは，このモジュールを取得するためのダウンロードリンクです．
