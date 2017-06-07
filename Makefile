@@ -36,6 +36,7 @@ COMPILER := $(CASK) $(CASK_EXEC) $(EMACS)
 FLAGS    := -Q -batch -L . -l $(SCRIPT_DIR)/org-publish-all.el
 
 publish:
+	./scripts/make-skeletons.rb org/original-index.org
 	$(COMPILER) $(FLAGS) $(OPTS) \
 	--eval "(make-all \"$(SRC_TOPDIR)\" \"$(DST_TOPDIR)\")" 2>&1 | \
 	egrep -v '^(OVERVIEW|Loading|\(No changes|Tangled|Skipping)'

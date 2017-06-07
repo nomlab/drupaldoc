@@ -3,30 +3,26 @@
 require 'net/http'
 require 'uri'
 require 'pathname'
-
+require 'fileutils'
 
 class Org
-  attr_reader :links
-
   def initialize(string, topdir = "org")
     @content = string
     @topdir = topdir
   end
 
   def dump
+    @content
+  end
+
+  def links_as_local
+    links = []
     each_element do |element|
       if element.element_type == :link
-        element = element.to_local(@topdir)
-        create_template(element) unless element.exist?
+        links << element.to_local(@topdir)
       end
-
-      # print element.to_s
-
-      # size = links[index].map(&:size).reduce(:+)
-      # local_org_path = links[index].map(&:local_org_path).reduce(:+)
-      # print " (#{size})" if size
-      # print " (#{local_org_path})" if local_org_path
     end
+    return links
   end
 
   # split at links
@@ -60,19 +56,9 @@ class Org
       end
     end
   end
-
-  private
-
-  def create_template(local_link)
-    STDERR.puts "Create #{local_link.path}"
-    tmp = OrgTemplate.new(local_link)
-    STDERR.puts "=> #{tmp.full_path}"
-    puts tmp.to_s
-  end
 end
 
 class OrgTemplate
-
   def initialize(local_link)
     @local_link = local_link
 
@@ -97,16 +83,6 @@ class OrgTemplate
 
   private
 
-  def make_template(local_link)
-    setupfile = Pathname.new("options/default.org")
-    orgdir = Pathname(File.dirname(local_link.path))
-
-    relative = setupfile.relative_path_from(orgdir)
-    lines = []
-    lines << "#+TITLE: #{local_link.title}"
-    lines << "#+SETUPFILE: #{relative}\n"
-    lines.join("\n")
-  end
 end
 
 class PlainString < String
@@ -125,10 +101,14 @@ class Link
   end
 
   class Base
-    attr_reader :url, :title, :topdir
+    attr_reader :url, :topdir
 
     def element_type
       :link
+    end
+
+    def title
+      @title.sub(/\s+\|.*/, "")
     end
 
     def initialize(url, title = nil, topdir = nil)
@@ -136,7 +116,7 @@ class Link
     end
 
     def to_s
-      return "[[#{@url}][#{@title}]" if @title
+      return "[[#{@url}][#{title}]]" if @title
       return "[#{@url}]"
     end
 
@@ -208,7 +188,37 @@ class Link
   end
 end
 
+def create_template(link)
+  setupfile = Pathname.new("options/default.org")
+  orgdir = Pathname(File.dirname(link.path))
 
+  relative = setupfile.relative_path_from(orgdir)
+  lines = []
+  lines << "#+TITLE: #{link.title}"
+  lines << "#+SETUPFILE: #{relative}"
+
+  FileUtils.mkdir_p(File.dirname(link.full_path))
+
+  File.open(link.full_path, "w") do |file|
+    file.puts lines.join("\n")
+  end
+end
 
 org = Org.new(gets(nil), "org")
-org.dump
+
+File.open("org/index.org", "w") do |file|
+  org.each_element do |e|
+    if e.element_type == :link
+      str = e.to_local(@topdir).to_s
+    else
+      str = e.to_s
+    end
+    file.print str
+  end
+end
+
+org.links_as_local.each do |link|
+  next if link.exist?
+  puts "* Creating template #{link.path}"
+  create_template(link)
+end
