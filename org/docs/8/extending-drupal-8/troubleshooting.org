@@ -1,0 +1,2 @@
+#+TITLE: Troubleshooting
+#+SETUPFILE: ../../../options/default.org

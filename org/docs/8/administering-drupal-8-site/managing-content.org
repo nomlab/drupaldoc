@@ -1,0 +1,2 @@
+#+TITLE: Managing content
+#+SETUPFILE: ../../../options/default.org

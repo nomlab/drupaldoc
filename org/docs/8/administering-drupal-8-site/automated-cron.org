@@ -1,0 +1,2 @@
+#+TITLE: Automated Cron
+#+SETUPFILE: ../../../options/default.org

@@ -15,7 +15,7 @@
    3) [[file:docs/8/multilingual/translating-site-interfaces.org][Translating site interfaces]]
    4) [[file:docs/8/multilingual/install-a-language.org][Install a language]]
    5) [[file:docs/8/multilingual/enable-language-negotiation.org][Enable language negotiation]]
-   6) [[file:docs/8/multilingual/translating-configuration.org][Translating configuration | Drupal.org]]
+   6) [[file:docs/8/multilingual/translating-configuration.org][Translating configuration]]
 
 ** [[file:docs/8/extending-drupal-8.org][Extending Drupal 8]]
    1) [[file:docs/8/extending-drupal-8/overview.org][Overview]]

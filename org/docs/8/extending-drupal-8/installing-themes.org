@@ -1,0 +1,2 @@
+#+TITLE: Installing Themes
+#+SETUPFILE: ../../../options/default.org

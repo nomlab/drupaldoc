@@ -1,0 +1,2 @@
+#+TITLE: Internal Page Cache
+#+SETUPFILE: ../../../options/default.org

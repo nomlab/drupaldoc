@@ -1,0 +1,2 @@
+#+TITLE: Install a language
+#+SETUPFILE: ../../../options/default.org
