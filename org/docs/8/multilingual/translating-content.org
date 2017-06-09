@@ -1,2 +1,32 @@
 #+TITLE: Translating content
 #+SETUPFILE: ../../../options/default.org
+
++ このページの原文: [[https://www.drupal.org/docs/8/multilingual/translating-content][Translating content]]
+
+* Translating Content
+  Drupal8では，コンテンツ翻訳のメインメソッドとして，core Content Translationモジュールを使用します．
+  このモジュールは，Drupal7のEntity Translationモジュールをよく似たアプローチを取り，ただ1つのノード，またはエンティティを作ります．
+  エンティティは，言語に依存せず，言語に関連した領域のみフラグが立てられる．
+
+** Enable content translation
+   Drupal8においてコンテンツ翻訳を適用するには，core Content Translationモジュールを適用しましょう．
+
+   以下を設定しましょう．
+   Configuration > Content language and translation (admin/config/regional/content-language)
+
+   このモジュールによって，コンテンツエンティティのタイプごとに翻訳するかどうか決められるようになります．
+   (コンテンツエンティティのタイプには，ノード，コメント，カスタムブロック，タクソノミー，ユーザなどがあります．)
+   さらに，各エンティティタイプの中のサブタイプについても翻訳するかどうかを決められます．
+   (サブタイプには，ノードにおけるコンテンツタイプ，タクソノミーにおける特定のボキャブラリー内のタームなどがあります．)
+   また，それぞれの翻訳可能なエンティティのサブタイプ中では，フィールドも翻訳するかどうか決められます．
+   [[https://www.drupal.org/files/2792597-enable-translation.png]]
+
+*** To Translate content:
+    一度，あるエンティティサブタイプのあるフィールドを翻訳できるように指定したのであれば，サイトには少なくとも2つの言語がインストールされたはずなので，コンテンツを翻訳できます．
+
+    翻訳権限を持つユーザは，”Edit”というリンクのそばに”Translate”というリンクが並んでいるのが見えるでしょう．
+    そこで，それぞれの設定された言語への翻訳を追加できます．
+    [[https://www.drupal.org/files/2792597-content-translation-annotated.png]]
+
+    追加後，全ての言語における訳は同じID(ノードIDなど)を共有します．
+    このため，Drupalのデータベースを見ると，それぞれの訳についての情報(言語やノードID)を保持するテーブルがあり，それぞれのフィールドは別のテーブルに翻訳後の内容を保持します．
