@@ -1,2 +1,34 @@
 #+TITLE: Installing Modules from the Command Line
 #+SETUPFILE: ../../../options/default.org
+
++ このページの原文: [[https://www.drupal.org/docs/8/extending-drupal-8/installing-modules-from-the-command-line][Installing Modules from the Command Line]]
+
+* Installing Modules from the Command Line
+  *この文書は不完全です．更なる情報を追加してください*
+
+  UIやcomposerを使用してモジュールをインストールすることに加えて，
+  drushやDrupal consoleを使用するコマンドラインからインタラクティブに
+  モジュールをインストールすることもあります．
+  コマンドラインからモジュールをインストールすることは，機能拡張の最も早い方法です．
+  しかし，それはcomposer.jsonファイルには適合しません．
+
+*** Drush
+
+	DrushはDrupalのシェルです．モジュールのコードベースをインストールするには，
+	以下のコマンドを実行します．
+
+	drush dl module_name
+
+	Drushを使用してモジュールを有効にするには，以下のコマンドを実行します．
+
+	drush en module_name
+
+	Drushに関する詳しい資料は，以下のリンクに記載されています．[https://github.com/drush-ops/drush]
+
+*** Drupal console
+
+	Drupal consoleでモジュールを有効にするには，[[https://docs.drupalconsole.com/en/commands/module-install.html][module:install command]]を実行します．
+
+*** Note on composer
+
+	composerはモジュールを有効にするのではなく，[[https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies#adding-modules][manage drupal site dependencies]]に使われます．
