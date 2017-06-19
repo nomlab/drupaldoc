@@ -1,2 +1,18 @@
 #+TITLE: Installing Sandbox Modules
 #+SETUPFILE: ../../../options/default.org
+
++ このページの原文：[[https://www.drupal.org/docs/8/extending-drupal-8/installing-sandbox-modules][Installing Sandbox Modules]]
+
+プロジェクトレビュープロセスを経たcontribモジュールに加えて，
+サンドボックスモジュールと呼ばれる厳密に精査されたモジュールは少なくなっています．
+これらのモジュールはDurpalセキュリティチェックプロセスの対象外で，
+ダウンロード用にパッケージ化されていません．
+それらをインストールするには，[[https://www.drupal.org/documentation/git][git]]
+を使用してプロジェクトソースをクローンする必要があります．
+
+サンドボックスモジュールは，contribモジュールほど広く使われていない傾向があります．
+サンドボックスモジュールは未完成であり，良いサポートを持っていないかもしれません．
+その一方で，サンドボックスモジュールのいくつかは非常にすぐれています．
+そして，ただ評価者が
+[[https://www.drupal.org/project/projectapplications][アプリケーションレビュープロセス]]
+というプロジェクトを経て，サンドボックスモジュールを取得する必要があります．

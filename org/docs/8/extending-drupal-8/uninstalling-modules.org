@@ -1,2 +1,9 @@
 #+TITLE: Uninstalling Modules
 #+SETUPFILE: ../../../options/default.org
+
+このページの原文：[[https://www.drupal.org/docs/8/extending-drupal-8/uninstalling-modules][Uninstalling Modules]]
+
+*この文書は不完全です．更なる情報を追加してください．*
+
+このページは一時的なスタブです．
+[[https://www.drupal.org/docs/8/extending-drupal-8/installing-contributed-modules-find-import-enable-configure-drupal-8][Installing Modules]]の内容の一部をこのページに移動すべきです．
