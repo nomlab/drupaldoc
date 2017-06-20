@@ -1,2 +1,33 @@
 #+TITLE: Installing modules' Composer dependencies
 #+SETUPFILE: ../../../options/default.org
+
++ このページの原文: [[https://www.drupal.org/docs/8/extending-drupal-8/installing-modules-composer-dependencies][Installing modules' Composer dependencies]]
+
+* Installing modules' Composer dependencies
+  *この文書は古くなっています．最新のものにしてください．*
+
+  [[https://getcomposer.org/][Composer]] は PHP のパッケージマネージャです．
+  Drupal 自身の依存関係管理や [[http://www.drush.org/en/master/make/][Drush make]] に似た機能を提供しますが，
+  Drupal のモジュールだけでなく，どのプロジェクトにも使用できます．
+  多くの Drupal 8 のモジュールは，
+  Composer を使用してサイトのコードベースに組み込む必要のある一般的な PHP パッケージに依存しています．
+
+** Which modules have Composer dependencies?
+
+   モジュールに Composer の依存関係があるかどうかを確認する方法はいくつかあります．
+
+   + プロジェクトのページ，README，または INSTALL ファイルといった文書
+   + ルートディレクトリに含まれる `comporser.json` ファイル
+   + 一度，[[https://www.drupal.org/node/2494073][#2494073: Mark modules with unmet composer dependencies uninstallable]] で修正され，
+     Drupal コアがこのようなモジュールを自動的に通知
+
+** How to install module's Composer dependencies
+*** Through Composer
+
+    Composer を使用すると，モジュールの Composer の依存関係を直接インストールできます．
+    これは，[[https://www.drupal.org/node/2718229][drupal.org Packagist]]，または[[https://packagist.drupal-composer.org/][drupal Packagist]] を使用しても可能です．
+
+*** Through Composer Manager
+
+    Composer Manager は，モジュールがもつComposerの依存関係のインストールを自動化するのに役立つ小さなモジュールです．
+    その [[https://www.drupal.org/node/2405811][説明書]] では、その使い方を説明しています．
