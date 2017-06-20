@@ -1,2 +1,59 @@
 #+TITLE: Enable language negotiation
 #+SETUPFILE: ../../../options/default.org
+
++ このページの原文:　[[https://www.drupal.org/docs/8/multilingual/enable-language-negotiation][Enable language negotiation]]
+
+* Enable language negotiation
+  *この文書は不完全です．さらなる情報を追加してください．*
+  
+  Drupalにはデフォルトで様々な検出方法による言語ネゴシエーションのサポートが含まれています．つまり，あなたのサイトは，サイトに入る前にユーザに言語の選択をさせずに多言語コンテンツを提供できます．Drupalを使用すると，言語を選択するスプラッシュスクリーンを使う必要がなくなります！
+
+  言語を決定する組み込みの検出方法には以下のものがあります．
+  
+  + URL - URLから言語を決定する(パスプレフィックスまたはドメイン)．
+  + セッション - request/sessionパラメーターから言語を決定する．
+  + ユーザ - ユーザの言語設定に従う．
+  + ブラウザ - ブラウザの言語設定から言語を決定する．
+  + 既定の言語 - サイトのデフォルトの言語(英語)を使用する．
+
+  [[https://www.drupal.org/files/Screen%20Shot%202012-03-23%20at%206.07.47%20PM.png]]
+
+ 「言語の検出と選択」(設定 > 地域と言語 > 言語 > 言語の検出と選択)により，これらの検出方法を有効にしたり，適用順を並び替えることができます．
+
+  通常は，URLによる検出が有効になっており，リストの最初に表示されます．つまり，ページのURLに言語が指定されている場合，そのページは指定された言語で表示されます．URLによる検出はページのドメインまたはパスプレフィックスを設定として使用することが出来ます．URLに言語が指定されていない場合，リストの次の検出方法が使用されます．
+
+  既定の言語は常に検出方法として有効になっており，通常は優先順位が最後の方法です．もし他の言語検出方法が利用出来ない場合に既定の言語を使用します．
+
+  組み込みの検出方法に加えて，独自のカスタムモジュール，提供されているモジュール，以下の方法を与えることでユーザの言語設定を判断することが出来ます．
+
+  + 位置情報 - ユーザの緯度，経度による位置情報で言語を決定する．
+  + LDAP - 組み込みのユーザによる検出に似ているが，データソースとしてLDAPを使用する．
+
+  また，[[https://www.drupal.org/node/1497272][独自の検出方法を作成]] し，Drupal7で導入されたAPIを用いてユーザの言語を判断することも出来ます．
+
+** Create a Language Switcher Link
+
+  URLによる検出方法を用いているなら，言語切り替えツールのリンクを作成する方法があります．このとき，あなたのテーマのいくつかのファイルを編集する必要があります。この例では，Webサイトを英語(既定の言語)または日本語のどちらかに切り替えるスイッチャーのリンクを示しています．
+
+  /themeName/.theme内に，以下のコードを追加(または，既存の/[themeName]/_preprocess_page()関数を変更)して，あなたのテーマファイルpage.html.twigで利用できる変数を作成できます．
+
+#+BEGIN_SRC javascript
+function mytheme_preprocess_page(&$vars) {
+  $current_path  = \Drupal::service('path.current')->getPath();
+  $language = $vars['language']->getId();
+
+  if($language == 'en') {
+    $vars['switch_path'] = '/ja'.$current_path;
+    $vars['switch_lang'] = t('Japanese');
+  } else {
+    $vars['switch_path'] = $current_path; //default path english
+    $vars['switch_lang'] = t('English');
+  }
+}
+#+END_SRC
+
+  そして，あなたのpage.html.twig内の好きな場所に以下のようなリンクを貼ることが出来ます． 
+
+#+BEGIN_SRC html
+ <a class="lang-switcher" href="{{ switch_path }}">{{ switch_lang }}</a>
+#+END_SRC
