@@ -1,2 +1,43 @@
 #+TITLE: Translating site interfaces
 #+SETUPFILE: ../../../options/default.org
+
++ このページの原文: [[https://www.drupal.org/docs/8/multilingual/translating-site-interfaces][Translating site interfaces
+]]
+* Translating site interfaces
+  この機能が使えるようになると，core の /Interface Translation module/ (Drupal 8 より前のバージョンでは「ロケール」と呼ばれていた機能)」のモジュールを用いると，デフォルト(英語)以外の言語でDrupalのサイトを利用できます．
+
+  マルチリンガルなWebサイトを設定したり，あなたのサイトのためにカスタマイズされたテキストを用いてインタフェーステキストの要素を置き換えるために，これを使えます．
+  /Interface Translation module/ がテキストに出会ったときはいつも，現在選択されている言語にそれを翻訳します．
+  もし，翻訳が利用できないなら，その文字列は覚えられていて，このため，翻訳されていない文字列を簡単に探し出すことができます．
+
+  ローカライゼーションアップデートモジュールは http://localize.drupal.org から自動的に翻訳を検索することができます．
+  すでに翻訳が完了している言語に対して，あなたはこのモジュールを設定する以外のことをすべきではありません．
+  Drupal 6 や 7では，ローカライゼーションアップデートモジュールは抵抗されているモジュールです．
+  Drupal 8 では，これはコアです．
+
+  /Interface Translation module/ は翻訳を低張するために2つのオプションを提供しています．
+  1つ目は翻訳できない文字列を探すためや，それらの翻訳を記述するために使えるWebインタフェースを統合します．
+  より簡単でより少ない時間経過の方法は存在しているあなたの言語への翻訳をインポートすることです．
+  これらの翻訳はGNUの /GNU gettext Potable Object files/ (.po ファイルと呼ぶ．)として利用可能です．
+  Drupal翻訳サーバから翻訳ファイルをダウンロードできます．
+
+  もし存在する翻訳があなたのニーズに合わなければ，.poファイルを特別な編集ツールを用いて編集します．
+  翻訳インタフェースモジュールのインポート機能を用いると，あなたのサイトのデータベース内のそのようなファイルから文字列を追加できます．
+  エクスポート機能を用いるとあなたのサイトの文字列から /Portable Object/ ファイルを生成し，あなたの翻訳を他人と共有できます．
+
+  ノート: /Interface Translation module/ そのものを有効にすることはサイトに対する翻訳を作ったり加えたりすることではありません． /Translate Interface/ オプションを使って翻訳をインポートしたり文字列翻訳を作成する必要があります(Drupal 6 以降 の Drupal core の /Content Translation/ モジュールによって提供されています．)．
+
+  テキストの方向が右から左のWebサイトを作成したいなら，ガーランドのコアテーマのような，これをサポートするテーマが必要です．
+
+* Register a string with the Translate interface UI
+
+  コアまたはコントリビュートされたモジュールによって提供された文字列が /Translate interface/ UI上に表示されることが期待され，表示されない場合，その文字列は Drupal 内に登録されていないことがよくあります．
+
+  したがって，翻訳されていない文字列が存在する場合(例: 'this text')では，デフォルト以外の言語で問題のテキストを表示するURLにアクセスする必要があります．
+たとえば，'this text' が /some/path に表示されている場合，別の言語に切り替えてから /some/path にアクセスしてください．
+
+  これは 'this text'という文字列を登録するため，admin/build/translate/search の /Translate interface/ UIを使うことができます．
+
+  Drupalで多言語サイトを設定する際に役立つ資料については，「リソースガイド：多言語サイトの設定」を参照してください．
+
+  また，localize.drupal.org の翻訳のセキュリティへの影響についても読んでください．
