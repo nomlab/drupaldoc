@@ -1,2 +1,52 @@
 #+TITLE: Updating Modules
 #+SETUPFILE: ../../../options/default.org
+
++ このページの原文: [[https://www.drupal.org/docs/8/extending-drupal-8/updating-modules][Updating Modules]]
+
+* Updating Modules
+
+** Update the module's code
+多くの提供されたモジュールは，セキュリティの問題の修正，モジュールの昨日に関する問題の修正，新しい機能の追加，
+もしくはその全ての定期的に更新します．
+使用しているモジュールの新しいバージョンを定期的にチェックし，リリースされるたびに更新することは，いい考えです．
+
+以下のページのユーザガイドで詳細なモジュールの更新について読むことができます．
+[[https://www.drupal.org/docs/user_guide/en/security-update-module.html][13.6 Updating A Module]]．
+もしくは，以下のドキュメントにも記載されています．
+[[https://www.drupal.org/docs/8/update/update-procedure-in-drupal-8][Updating Procedure in Drupal8]]．
+
+もし，サイトで使用しているモジュールをComposerを用いて管理している場合は，
+ユーザガイド中の以下のページに示す，Composerを利用してプロジェクトのファイルを更新する方法に関するセクションを参照してください．
+[[https://www.drupal.org/docs/user_guide/en/install-composer.html][11.9. Using Composer and Git to Download Files]]．
+
+** Run the update script
+サイト上の既存のモジュールを更新した後は，データベースの更新スクリプトを実行することをお勧めします．
+
+'/'を1つ追加し、ブラウザのウェブサイトアドレスの後に 'update.php'を追加します。
+
+例: http://sample-site/update.php
+
+キーボード上の[Return/Enter]キーを押します．
+
+'Drupal database update'ページで，"Continue"ボタンを押します．
+
+次のページに'No pending updates.'と表示されます．"Administaration"をクリックしてください．
+
+万一，そのページに'No pending updates.'と表示されず，
+むしろ更新が保留中であることを示している場合は，保留中の更新を適用します．
+これは，おそらく，
+モジュールやDrupalコアを更新した後で，更新スクリプトを実行しておくべきであることを示しています．
+
+もしくは、'Extend'ページの上部にある'update script'リンクをクリックすることで，更新スクリプトを実行できます．
+
+** Related Content
+*** [[https://www.drupal.org/docs/8/update/update-procedure-in-drupal-8][Update procedure in Drupal 8]]
+バージョン8.X.XのDrupalから，それ以降のバージョン8.X.Xへの更新方法についての段階的な説明を記述しています．
+
+*** [[https://www.drupal.org/docs/user_guide/en/install-composer.html][11.9. Using Composer and Git to Download Files]]
+ComposerおよびGitツールを使用して、
+コアソフトウェアおよびアドオンモジュールとテーマのファイルを管理する方法を記述しています．
+
+*** [[https://www.drupal.org/docs/user_guide/en/security-update-module.html][13.6. Updating a Module]]
+管理インターフェイスを使用したデータベース更新スクリプトの実行、
+またはDrushの使用によって提供モジュールを更新する方法を記述しています．
