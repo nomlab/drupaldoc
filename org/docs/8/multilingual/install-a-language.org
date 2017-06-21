@@ -1,2 +1,35 @@
 #+TITLE: Install a language
 #+SETUPFILE: ../../../options/default.org
+
++ このページの原文: [[https://www.drupal.org/docs/8/multilingual/install-a-language][Install a language]]
+
+* Install a language
+Drupalのインストール時に言語を追加するには，[[https://www.drupal.org/docs/8/multilingual/install-a-language][Install Drupal in another language]]を参照してください。
+
+** Add a language
+1. Interface Translationモジュールを有効化
+2. 言語設定ページに移動：
+ - Configuration > Regional and language > Languages\\
+  (admin/config/regional/language)
+ そのページで：
+3. 必要な言語を追加
+4. デフォルトの言語を設定\\
+ *デフォルトの言語は変更しないでください．さもなければ壊れます！*
+5. 以下の自動または手動の方法により文字列を更新
+
+** Update strings (automatic method)
+*** Drupal8
+Reports > Available Translation Updates (admin/reports/translations)に移動し，manuallyにチェックします．
+そのリンクがない場合は、"Update manager"モジュールを有効にする必要があります．
+
+*** Drupal7
+1. [[https://www.drupal.org/project/l10n_update][Localization update (l10n_update)]]をインストール([[https://www.drupal.org/node/1412862][instructionsを参照]])
+2. 言語の翻訳を更新：
+ - Configuration > Regional and language > Translate Interface > Update\\
+  (admin/config/regional/translate/update)
+
+** Update strings (manual method)
+1. [[https://localize.drupal.org][localize.drupal.org]]から必要な翻訳ファイルをダウンロード
+2. サイトに翻訳ファイルをアップロード
+ - Configuration > Regional and language > Translate Interface > Import\\
+  (admin/config/regional/translate/import)
