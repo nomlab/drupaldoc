@@ -1,17 +1,17 @@
 #+TITLE: Translating site interfaces
 #+SETUPFILE: ../../../options/default.org
 
-+ このページの原文: [[https://www.drupal.org/docs/8/multilingual/translating-site-interfaces][Translating site interfaces
-]]
++ このページの原文: [[https://www.drupal.org/docs/8/multilingual/translating-site-interfaces][Translating site interfaces]]
+
 * Translating site interfaces
-  この機能が使えるようになると，core の /Interface Translation module/ (Drupal 8 より前のバージョンでは「ロケール」と呼ばれていた機能)」のモジュールを用いると，デフォルト(英語)以外の言語でDrupalのサイトを利用できます．
+  この機能が使えるようになると，[[https://www.drupal.org/docs/7/understanding-drupal/glossary#core][core]] の /Interface Translation module/ (Drupal 8 より前のバージョンでは「ロケール」と呼ばれていた機能)」のモジュールを用いると，デフォルト(英語)以外の言語でDrupalのサイトを利用できます．
 
   マルチリンガルなWebサイトを設定したり，あなたのサイトのためにカスタマイズされたテキストを用いてインタフェーステキストの要素を置き換えるために，これを使えます．
   /Interface Translation module/ がテキストに出会ったときはいつも，現在選択されている言語にそれを翻訳します．
   もし，翻訳が利用できないなら，その文字列は覚えられていて，このため，翻訳されていない文字列を簡単に探し出すことができます．
 
-  ローカライゼーションアップデートモジュールは http://localize.drupal.org から自動的に翻訳を検索することができます．
-  すでに翻訳が完了している言語に対して，あなたはこのモジュールを設定する以外のことをすべきではありません．
+  [[https://www.drupal.org/node/1412862][Localization update]] モジュールは http://localize.drupal.org から自動的に翻訳を検索することができます．
+  すでに翻訳が完了している言語に対して，あなたはこのモジュールを[[https://www.drupal.org/node/1412862][設定する]] 以外のことをすべきではありません．
   Drupal 6 や 7では，ローカライゼーションアップデートモジュールは抵抗されているモジュールです．
   Drupal 8 では，これはコアです．
 
@@ -19,7 +19,7 @@
   1つ目は翻訳できない文字列を探すためや，それらの翻訳を記述するために使えるWebインタフェースを統合します．
   より簡単でより少ない時間経過の方法は存在しているあなたの言語への翻訳をインポートすることです．
   これらの翻訳はGNUの /GNU gettext Potable Object files/ (.po ファイルと呼ぶ．)として利用可能です．
-  Drupal翻訳サーバから翻訳ファイルをダウンロードできます．
+  [[https://localize.drupal.org/][Drupal翻訳サーバ]] から翻訳ファイルをダウンロードできます．
 
   もし存在する翻訳があなたのニーズに合わなければ，.poファイルを特別な編集ツールを用いて編集します．
   翻訳インタフェースモジュールのインポート機能を用いると，あなたのサイトのデータベース内のそのようなファイルから文字列を追加できます．
@@ -38,6 +38,6 @@
 
   これは 'this text'という文字列を登録するため，admin/build/translate/search の /Translate interface/ UIを使うことができます．
 
-  Drupalで多言語サイトを設定する際に役立つ資料については，「リソースガイド：多言語サイトの設定」を参照してください．
+  Drupalで多言語サイトを設定する際に役立つ資料については，「[[https://www.drupal.org/resource-guides/configuring-multilingual-site][リソースガイド：多言語サイトの設定]] 」を参照してください．
 
-  また，localize.drupal.org の翻訳のセキュリティへの影響についても読んでください．
+  また，[[https://localize.drupal.org/privacy-and-security][localize.drupal.org の翻訳のセキュリティへの影響]]についても読んでください．
