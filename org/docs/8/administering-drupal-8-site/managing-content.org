@@ -1,64 +1,64 @@
 #+TITLE: Managing content
 #+SETUPFILE: ../../../options/default.org
 
-+ ���̃y�[�W�̌���: [[https://www.drupal.org/docs/8/administering-drupal-8-site/managing-content][Managing content]]
++ このページの原文: [[https://www.drupal.org/docs/8/administering-drupal-8-site/managing-content][Managing content]]
 
 * Managing content
 
 ** Adding content
-  ���̃K�C�h�ł̓C���X�g�[������ Basic Page �� Article ��2�̃R���e���c�^�C�v���`���� standard profile ���g�p�������Ƃ�O��Ƃ��Ă��܂��D(�����Cminimal profile ���g�p�����Ȃ�΁C�ŏ���[[https://www.drupal.org/node/774728][�R���e���c�^�C�v���`����]]�K�v������܂��D)
+  このガイドではインストール時に Basic Page と Article の2つのコンテンツタイプを定義する standard profile を使用したことを前提としています．(もし，minimal profile を使用したならば，最初に[[https://www.drupal.org/node/774728][コンテンツタイプを定義する]]必要があります．)
   
-  *�n�߂�O��:* �R���e���c���쐬���錠���������[�U�Ń��O�C�����Ă��邱�Ƃ��m�F���Ă��������D-����������Ȃ���΁C�V�X�e���Ǘ��҂ɖ₢���킹�Ă��������D�������Ȃ���΁C�I������K�v�����邢�����̗̈悪�\������܂���D
+  *始める前に:* コンテンツを作成する権限を持つユーザでログインしていることを確認してください．-もし分からなければ，システム管理者に問い合わせてください．そうしなければ，選択する必要があるいくつかの領域が表示されません．
   
-  1. �t�����g�y�[�W���� Add content ��I������D(�i�r�P�[�V�������j���[�������͊Ǘ��҃��j���[����)
+  1. フロントページから Add content を選択する．(ナビケーションメニューもしくは管理者メニューから)
   [[https://www.drupal.org/files/manage-content-1.png]]
   
-  2. ����ɂ��C�ǉ�����R���e���c�̃^�C�v��q�˂��ʂ��\������܂��D�f�t�H���g�ł́CDrupal 8 �ɂ� Article �� Basic Page ��2��ނ̃R���e���c�^�C�v������܂��D
+  2. これにより，追加するコンテンツのタイプを尋ねる画面が表示されます．デフォルトでは，Drupal 8 には Article と Basic Page の2種類のコンテンツタイプがあります．
   [[https://www.drupal.org/files/manage-content-2.png]]
   
-  3. Article ��I�����܂��DBasic Page �� Article �̗B��̑傫�ȈႢ�́CArticle���쐬����Ƃ��ɂ͉摜���A�b�v���[�h�ł��ABasic Page �͐ÓI�y�[�W�p�ł��D�R���e���c�^�C�v�̗̈�͌ォ��X�V�\�ł��D
+  3. Article を選択します．Basic Page と Article の唯一の大きな違いは，Articleを作成するときには画像をアップロードでき、Basic Page は静的ページ用です．コンテンツタイプの領域は後から更新可能です．
   
-  4. Article�̏�����͂���t�H�[�����\������܂��D���r�W�������O�C���j���[�C�R�����g�C���� ����� �v�����[�V�����I�v�V�����̐ݒ���\�ł��D�����̐ݒ�́C[[https://www.drupal.org/docs/8/extending-drupal-8][Drupal�C���X�^���X�̊g��]]��[[https://www.drupal.org/docs/8/extending-drupal-8/installing-modules][�R���g���r���[�g���ꂽ���W���[���̎g�p]]�ɂ���ĕω����܂��D
+  4. Articleの情報を入力するフォームが表示されます．リビジョンログ，メニュー，コメント，著者 および プロモーションオプションの設定も可能です．これらの設定は，[[https://www.drupal.org/docs/8/extending-drupal-8][Drupalインスタンスの拡張]]や[[https://www.drupal.org/docs/8/extending-drupal-8/installing-modules][コントリビュートされたモジュールの使用]]によって変化します．
   [[https://www.drupal.org/files/manage-content-3.png]]
   
-  5. Title �e�L�X�g�{�b�N�X�Ƀy�[�W�̃^�C�g������͂��܂��D:�Ⴆ�΁CTest Article.
+  5. Title テキストボックスにページのタイトルを入力します．:例えば，Test Article.
   
-  6. Summary �̈�ɋL�����Ȍ��ɕ\���e�L�X�g����͂��܂��D
+  6. Summary 領域に記事を簡潔に表すテキストを入力します．
   
-  7. Body �̈�Ƀe�L�X�g����͂��܂��D�������ɏ������e�L�X�g������Ȃ�΁C���̗̈�ɃJ�b�g���y�[�X�g���邾���ł��D�����ݒ�I�v�V�����́C�e�L�X�g�̈�̉��ɂ��� Text Fromat �̃h���b�v�_�E������I���ł��܂��D�f�t�H���g�ŗ��p�\�ȃI�v�V�����́CBasic HTML�CRestricted HTML �� Full HTML �ł��D
+  7. Body 領域にテキストを入力します．もし既に書いたテキストがあるならば，この領域にカット＆ペーストするだけです．書式設定オプションは，テキスト領域の下にある Text Fromat のドロップダウンから選択できます．デフォルトで利用可能なオプションは，Basic HTML，Restricted HTML と Full HTML です．
   
-  8. �R���e���c�Ƀ^�O��t���邱�Ƃ��ł��܂��B �^�O�t���ɂ��Ēm��ɂ�[[https://www.drupal.org/docs/7/organizing-content-with-taxonomies][����]]���N���b�N���Ă��������B
+  8. コンテンツにタグを付けることができます。 タグ付けについて知るには[[https://www.drupal.org/docs/7/organizing-content-with-taxonomies][ここ]]をクリックしてください。
   
-  9. �R���e���c�^�C�v�ɉ摜���A�b�v���[�h�ł��܂��D
+  9. コンテンツタイプに画像をアップロードできます．
   
-  10. Save ���N���b�N���܂��DSave �{�^������R���e���c�����J���������J�̂܂܂ɂ����肷�邱�Ƃ��ł��܂��D
+  10. Save をクリックします．Save ボタンからコンテンツを公開したり非公開のままにしたりすることができます．
   
-  11. ���g�̓��e������ׂ��ł��D
+  11. 自身の投稿を見るべきです．
   [[https://www.drupal.org/files/manage-content-4.png]]
   
 ** Managing nodes
-  1�ȏ�̃m�[�h�ɗl�X�ȑ�������s�ł��܂��D�m�[�h�����J�܂��͔���J�Ƃ��Ďw�肵����C�t�����g�y�[�W�ɏ��i������~�i������C�ŏ㕔�ɌŒ肵����(���X�g�̐擪�ɌŒ�)���邱�Ƃ��ł��܂��D�܂��C1�ȏ�̃m�[�h�̍폜���ł��܂��D
+  1つ以上のノードに様々な操作を実行できます．ノードを公開または非公開として指定したり，フロントページに昇格したり降格したり，最上部に固定したり(リストの先頭に固定)することができます．また，1つ以上のノードの削除もできます．
   
-  �Ǘ��҃��j���[����R���e���c�����N���N���b�N���邩 '/admin/content' �Ɉړ����邱�ƂŁCDrupal �A�v���P�[�V�������̑S�ẴR���e���c�̃��X�g���\������܂��D
+  管理者メニューからコンテンツリンクをクリックするか '/admin/content' に移動することで，Drupal アプリケーション内の全てのコンテンツのリストが表示されます．
   [[https://www.drupal.org/files/manage-content-5.png]]
   
-  - /Administration/ > /Content/ ���N���b�N���܂��D
-  - �K�v�ɉ����āC�\�����ꂽ�R���e���c���ȉ��̗l�ɃX�e�[�^�X�A�^�C�v�C�^�C�g���C����Ńt�B���^�����O���܂��D
-    - �t�B���^�� any / all �̓��C�ړI�̒l��I�����܂��D
-    - �t�B���^�����O��̃R���e���c��\�����邽�� Filter �{�^�����N���b�N���܂��D
-  - �Ǘ�����R���e���c�͊e�s�̍����ɂ���{�b�N�X���g�p���đI�����܂��D
-  - �S�ẴR���e���c��I������ɂ́CTitle �̍����ɂ���{�b�N�X���N���b�N���܂��D
-  - �X�V�I�v�V�����̈���̃A�N�V�����I���{�b�N�X������s����Ǘ��X�V�I�v�V������I�����܂��D�Ⴆ�΁C:Remove content from front page�D
-  - Update ���N���b�N���܂��D
-  �m�[�h�̃A�N�Z�X���̏��ɂ��ẮC[[https://www.drupal.org/docs/7/managing-users][Mnaging Users]] �Z�N�V�������Q�Ƃ��Ă��������D
+  - /Administration/ > /Content/ をクリックします．
+  - 必要に応じて，表示されたコンテンツを以下の様にステータス、タイプ，タイトル，言語でフィルタリングします．
+    - フィルタの any / all の内，目的の値を選択します．
+    - フィルタリング後のコンテンツを表示するため Filter ボタンをクリックします．
+  - 管理するコンテンツは各行の左側にあるボックスを使用して選択します．
+  - 全てのコンテンツを選択するには，Title の左側にあるボックスをクリックします．
+  - 更新オプション領域内のアクション選択ボックスから実行する管理更新オプションを選択します．例えば，:Remove content from front page．
+  - Update をクリックします．
+  ノードのアクセス許可の情報については，[[https://www.drupal.org/docs/7/managing-users][Mnaging Users]] セクションを参照してください．
   
 ** Managing comments
-  �S�ẴR�����g�̃��X�g�r���[��\���ł��܂��D���X�g����C1�ȏ�̃R�����g�̔���J��폜��I���ł��܂��D
+  全てのコメントのリストビューを表示できます．リストから，1つ以上のコメントの非公開や削除を選択できます．
   
-  - /Administration/ > /Content/ ���N���b�N���܂��D
-  - Comments �^�u���N���b�N���܂��D
+  - /Administration/ > /Content/ をクリックします．
+  - Comments タブをクリックします．
   
-  - 1�ȏ�̃R�����g��I�����܂��D
-  - �h���b�v�_�E�����X�g�������J��폜��I�����܂��D
-  - Update ���N���b�N���܂��D
+  - 1つ以上のコメントを選択します．
+  - ドロップダウンリストから非公開や削除を選択します．
+  - Update をクリックします．
 
