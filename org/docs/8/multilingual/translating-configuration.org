@@ -1,2 +1,46 @@
 #+TITLE: Translating configuration
 #+SETUPFILE: ../../../options/default.org
+
++ このページの原文: [[https://www.drupal.org/docs/8/multilingual/translating-configuration][Translating configuration]]
+
+* Translating configuration
+** About
+Configuration Translationモジュール(Drupal8のDrupal Coreの一部)は，configurationを異なる言語に翻訳することができます．
+views，your site name，contact module categories，vocabularies，menus，およびblocksなどはすべて統一されたconfiguration system内に格納され，Configuration Translationモジュールで翻訳できます．
+nodes，taxonomy terms，およびcustom blocksなどのコンテンツはDrupal coreのContent Translationモジュールで翻訳でき，built-in user interface(registration forms，content submission，およびadministration interfacesなど)はInterface Translationモジュールで翻訳できます．
+サイト全体をさまざまな言語に翻訳するため，これら3つのモジュールを効果的に一緒に使用します．
+
+Configuration translationは翻訳を提供するために[[https://www.drupal.org/docs/8/api/configuration-api/configuration-schemametadata][correct configuration schema]]をもっている必要があります．
+
+** Uses
+*** Translating
+configurationの項目を翻訳するには，configurationを表示するときに翻訳タブを選択し，翻訳を提供する言語を選択してから内容を入力します．
+
+*** Translatable configuration elements
+1. Block
+2. Comment fields
+3. Comment type
+4. Contact form
+5. Contact message fields
+6. Content fields
+7. Content type
+8. Custom block fields
+9. Custom block type
+10. Date format
+11. Form mode
+12. Image style
+13. Language
+14. Menu
+15. Role
+16. Search page
+17. Shortcut set
+18. Taxonomy term fields
+19. Taxonomy vocabulary
+20. Text format
+21. User fields
+22. View
+23. View mode
+24. Account settings
+25. RSS publishing
+26. System information
+27. System maintenance
