@@ -1,2 +1,31 @@
 #+TITLE: Troubleshooting
 #+SETUPFILE: ../../../options/default.org
+
++ このページの原文: [[[[https://www.drupal.org/docs/8/extending-drupal-8/troubleshooting]]]]
+
+この文書は不完全です．更なる情報を追加してください．
+
+* Broken site problems - Run the update script, and 'Clear all caches'
+  特にモジュールを有効にした後，サイトがおかしな挙動をしたり，奇妙なエラーや空白のページを表示したりした場合，まずはページを更新してください．
+
+  その後，「アップデートスクリプトの実行」に続いて，「キャッシュの削除」を行うことで，たいていの問題は解決します．
+
+  この2つの内，「キャッシュの削除」は，簡単かつ素早く修正でき，時間効率が良いです．しかし，以下の2つの手順は，「アップデートスクリプトの実行」から始まります．これは，2つの中で最も徹底したものであり，サイトにトラブルが発生した際に最初に行うべきことです．
+
+  アップデートスクリプトを実行するたびに、Drupal7サイトのモジュール「DHTML-Menu」はキャッシュの削除を要求するため，一般的にアップデートスクリプトを実行する際は，それに伴ってキャッシュを削除します．
+
+  このため，以下の2つのステップは，サイトの問題に対処する際に，最初に行うべきことであり，必要に応じて，「アップデートスクリプトの実行」や「キャッシュの削除」を行う必要があります．
+
+  最後に，Googleで検索してください．問題に関するエラーレポートがある場合，エラーメッセージの始めの部分で検索してくだい．
+  
++ Clear all caches\\
+  サイトの以下のページに移動し，"Clear all caches"をクリックしてください．
+  - "Administration" > "configuration" > "Development" > "Performance"\\
+    ([d8-root]/admin/config/development/performance)
+
++ Run Cron\\
+  サイトの以下のページに移動し，ページ先頭付近の"Run cron"をクリックしてください．
+  - "Reports" > "Status Reports"
+
++ rebuild.php\\
+  上記の"update.php"を実行した方法と同じ方法で"rebuild.php"を実行してください．
