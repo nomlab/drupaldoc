@@ -1,2 +1,18 @@
 #+TITLE: Automated Cron
 #+SETUPFILE: ../../../options/default.org
+
++ このページの原文: [[https://www.drupal.org/docs/8/administering-drupal-8-site/automated-cron][Automated Cron]]
+
+* Automated Cron
+  Drupal8では，Automated Cronモジュールを提供しています．
+　このcore moduleは，core/modules/auromated_cron以下に置かれています．
+
+** Compared to Drupal 7
+   Drupal7にも，"automated cron system"がすでにあったのですが，
+   Drupal8ではそれを別のモジュールに移動し，それを使用しないサイトではオーバーヘッドが発生しないようにしました．
+
+** Related Content
+*** [[https://www.drupal.org/docs/8/cron-automated-tasks][Cron automated tasks]]
+	CronをあなたのDrupal8サイトのための自動タスクにするための設定
+*** [[https://www.drupal.org/docs/7/setting-up-cron][Setting up cron]]
+	Drupal7でのcronの設定

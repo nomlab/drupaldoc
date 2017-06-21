@@ -1,2 +1,38 @@
 #+TITLE: Internal Page Cache
 #+SETUPFILE: ../../../options/default.org
+
++ このページの原文: [[https://www.drupal.org/docs/8/administering-drupal-8-site/internal-page-cache][Internal Page Cache]]
+
+* Internal Page Cache
+  Drupal8は小規模から中規模までのウェブサイトを推奨としたInternal Page Cacheモジュールを提供しています．
+  このcore moduleはデフォルトで有効となっており，匿名ユーザー用のページをキャッシュします．
+
+　この機能により，サイトの高速化が行われるためパフォーマンスが改善されます．
+　匿名ユーザーが要求したページは，要求されてから再利用された時に初めて格納されます．
+　サイトの構造によっては，パフォーマンスの改善が重要となります．
+
+　認証されたユーザーのためにサイトを高速化したいなら，以下のサイトを参照してください．
+　[[https://www.drupal.org/docs/8/core/modules/dynamic-page-cache/overview][Dynamic Page Cache module]]
+
+  匿名ユーザーに個人化されたコンテンツを提供するウェブサイト(動的なもの，セッションごと，例えばショッピングカート)
+  では，Internal Page Cacheモジュールを無効にしてください．
+  これは，このモジュールがすべての匿名ユーザーのページが同一で無い場合を想定していないからです．
+  このようなウェブサイトはDynamic Page Cacheモジュールを利用することも出来ますが，
+  JavaScript + AJAXを使用してパーソナライズを行うことも出来ます．
+
+** Configuring the Internal Page Cache module
+  Parformance(admin/config/development/performance)page上でのみ，
+  ブラウザとプロキシがページをキャッシュする期間を設定できます．
+  その設定は，Internal Page Cacheモジュールによっても尊重されます．
+  ブラウザとプロキシがページをキャッシュできる最大時間は，
+  Cache-Controlヘッダーによって利用されます．
+
+** Comparison to Drupal7
+  + Drupal7では即時に更新されませんでした．しかし，Drupal8のページキャッシュでは，何かが変更された際に即時に更新されます．
+  + Drupal7では，コンテンツが変更されるたびにページキャッシュ全体をクリアする必要がありました．しかし，Drupal8は[[https://www.drupal.org/docs/8/api/cache-api/cache-tags][cache tags]]を使用して，変更されたコンテンツに依存するキャッシュされたページのみを変更します．
+  + Drupal7では，古いページを提供し続ける事が多々ありました．これは，どのモジュール(およびDrupal7コアの一部)もページキャッシュをクリア出来なかったためです．
+  + Drupal7のInternal Page Cacheはデフォルトでは有効になっていません．これは，有効にした際に，多くのユーザーがそれを有効にすべきだとが知らなかったためです．Drupal8は，デフォルトで匿名ユーザーのページキャッシュを有効にしています．これは，2で述べたcache tagsのおかげで行うことができます．Drupal7の場合，Internal Page Cacheをデフォルトで有効にすると動作が壊れてしまいます．(これは，Drupal7にcache tagsがなかったためです．)
+** See also
+   [[http://wimleers.com/blog/drupal-8-page-caching-enabled-by-default][・Drupal 8 now has page caching enabled by default]]
+
+   [[https://www.drupal.org/docs/8/api/cache-api/cache-tags][・Cache tags developer documentation]]
