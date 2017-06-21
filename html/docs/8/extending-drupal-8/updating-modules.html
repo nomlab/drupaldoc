@@ -231,7 +231,111 @@ for the JavaScript code in this tag.
 </div><div id="content">
 <header>
 <h1 class="title">Updating Modules</h1>
-</header></div>
+</header><ul class="org-ul">
+<li>このページの原文: <a href="https://www.drupal.org/docs/8/extending-drupal-8/updating-modules">Updating Modules</a></li>
+</ul>
+
+<div id="outline-container-orge511374" class="outline-2">
+<h2 id="orge511374">Updating Modules</h2>
+<div class="outline-text-2" id="text-orge511374">
+</div><div id="outline-container-org3abe9e6" class="outline-3">
+<h3 id="org3abe9e6">Update the module's code</h3>
+<div class="outline-text-3" id="text-org3abe9e6">
+<p>
+多くの提供されたモジュールは，セキュリティの問題の修正，モジュールの昨日に関する問題の修正，新しい機能の追加，
+もしくはその全ての定期的に更新します．
+使用しているモジュールの新しいバージョンを定期的にチェックし，リリースされるたびに更新することは，いい考えです．
+</p>
+
+<p>
+以下のページのユーザガイドで詳細なモジュールの更新について読むことができます．
+<a href="https://www.drupal.org/docs/user_guide/en/security-update-module.html">13.6 Updating A Module</a>．
+もしくは，以下のドキュメントにも記載されています．
+<a href="https://www.drupal.org/docs/8/update/update-procedure-in-drupal-8">Updating Procedure in Drupal8</a>．
+</p>
+
+<p>
+もし，サイトで使用しているモジュールをComposerを用いて管理している場合は，
+ユーザガイド中の以下のページに示す，Composerを利用してプロジェクトのファイルを更新する方法に関するセクションを参照してください．
+<a href="https://www.drupal.org/docs/user_guide/en/install-composer.html">11.9. Using Composer and Git to Download Files</a>．
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf5aaba0" class="outline-3">
+<h3 id="orgf5aaba0">Run the update script</h3>
+<div class="outline-text-3" id="text-orgf5aaba0">
+<p>
+サイト上の既存のモジュールを更新した後は，データベースの更新スクリプトを実行することをお勧めします．
+</p>
+
+<p>
+'/'を1つ追加し、ブラウザのウェブサイトアドレスの後に 'update.php'を追加します。
+</p>
+
+<p>
+例: <a href="http://sample-site/update.php">http://sample-site/update.php</a>
+</p>
+
+<p>
+キーボード上の[Return/Enter]キーを押します．
+</p>
+
+<p>
+'Drupal database update'ページで，"Continue"ボタンを押します．
+</p>
+
+<p>
+次のページに'No pending updates.'と表示されます．"Administaration"をクリックしてください．
+</p>
+
+<p>
+万一，そのページに'No pending updates.'と表示されず，
+むしろ更新が保留中であることを示している場合は，保留中の更新を適用します．
+これは，おそらく，
+モジュールやDrupalコアを更新した後で，更新スクリプトを実行しておくべきであることを示しています．
+</p>
+
+<p>
+もしくは、'Extend'ページの上部にある'update script'リンクをクリックすることで，更新スクリプトを実行できます．
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge31e3ce" class="outline-3">
+<h3 id="orge31e3ce">Related Content</h3>
+<div class="outline-text-3" id="text-orge31e3ce">
+</div><div id="outline-container-orgd57ac4e" class="outline-4">
+<h4 id="orgd57ac4e"><a href="https://www.drupal.org/docs/8/update/update-procedure-in-drupal-8">Update procedure in Drupal 8</a></h4>
+<div class="outline-text-4" id="text-orgd57ac4e">
+<p>
+バージョン8.X.XのDrupalから，それ以降のバージョン8.X.Xへの更新方法についての段階的な説明を記述しています．
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge6cf362" class="outline-4">
+<h4 id="orge6cf362"><a href="https://www.drupal.org/docs/user_guide/en/install-composer.html">11.9. Using Composer and Git to Download Files</a></h4>
+<div class="outline-text-4" id="text-orge6cf362">
+<p>
+ComposerおよびGitツールを使用して、
+コアソフトウェアおよびアドオンモジュールとテーマのファイルを管理する方法を記述しています．
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc58ac64" class="outline-4">
+<h4 id="orgc58ac64"><a href="https://www.drupal.org/docs/user_guide/en/security-update-module.html">13.6. Updating a Module</a></h4>
+<div class="outline-text-4" id="text-orgc58ac64">
+<p>
+管理インターフェイスを使用したデータベース更新スクリプトの実行、
+またはDrushの使用によって提供モジュールを更新する方法を記述しています．
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div id="postamble" class="status">
 <p class="validation"></p>
 </div>

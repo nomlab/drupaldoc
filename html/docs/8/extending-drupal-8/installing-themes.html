@@ -231,7 +231,62 @@ for the JavaScript code in this tag.
 </div><div id="content">
 <header>
 <h1 class="title">Installing Themes</h1>
-</header></div>
+</header><p>
+このページの原文：[[<a href="https://www.drupal.org/docs/8/extending-drupal-8/installing-themes">https://www.drupal.org/docs/8/extending-drupal-8/installing-themes</a>"&gt;[Installing Themes]
+</p>
+
+<p>
+テーマをインストールする
+</p>
+
+<p>
+最終更新日：2017年1月21日
+</p>
+
+<p>
+このドキュメントは不完全です。詳細情報を追加してください。
+</p>
+
+<p>
+Drupal 8はすべてのコアコードとテーマを/ core /という名前のディレクトリとWebrootディレクトリ/テーマのすべてのcontribテーマまたはカスタムテーマの下に 配置します。 / sites / all / themes、およびその他のDrupal 7オプションはテーマで引き続き使用できます。
+</p>
+
+<p>
+テーマは引き続き同じものをダウンロードして展開します。内部を見ると、主な違いは次のとおりです。
+</p>
+
+<p>
+.infoファイルは.info.ymlに変更されます。
+</p>
+
+<p>
+.tpl.phpファイルは.html.twigに変更されます。
+</p>
+
+<p>
+以下はDrupal 8のディレクトリ/テーマからのREADME.txtです。
+</p>
+
+<p>
+Drupalコアからの分離を確実にし、安全で自己完結したコード更新を容易にするために、このディレクトリにサイトの外観を変更するダウンロードされたカスタムテーマを配置します。
+</p>
+
+<p>
+Drupalコミュニティからの寄稿テーマは<a href="http://drupal.org/project/themes%E3%81%A7%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99">http://drupal.org/project/themesでダウンロードできます</a>。
+</p>
+
+<p>
+テーマをサブディレクトリに整理することは安全です。Drupalのサブテーマ機能を使用して簡単に保守とアップグレードを行うことをお勧めします。
+</p>
+
+<p>
+マルチサイト構成では、このディレクトリにあるテーマはすべてのサイトで使用できます。このディレクトリに加えて、共通の共有テーマはsites / all / themesディレクトリに保存され、このディレクトリのテーマよりも優先されます。また、sites / your_site_name / themesディレクトリパターンを使用してテーマを特定のサイトインスタンスに制限することもできます。
+</p>
+
+<p>
+テーマの詳細については、DrupalルートディレクトリのREADME.txtの "Appearance"セクションを参照してください。
+</p>
+</div>
 <div id="postamble" class="status">
 <p class="validation"></p>
 </div>

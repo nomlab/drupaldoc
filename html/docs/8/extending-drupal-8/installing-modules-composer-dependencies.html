@@ -231,7 +231,67 @@ for the JavaScript code in this tag.
 </div><div id="content">
 <header>
 <h1 class="title">Installing modules' Composer dependencies</h1>
-</header></div>
+</header><ul class="org-ul">
+<li>このページの原文: <a href="https://www.drupal.org/docs/8/extending-drupal-8/installing-modules-composer-dependencies">Installing modules' Composer dependencies</a></li>
+</ul>
+
+<div id="outline-container-orgb2a596f" class="outline-2">
+<h2 id="orgb2a596f">Installing modules' Composer dependencies</h2>
+<div class="outline-text-2" id="text-orgb2a596f">
+<p>
+<b>この文書は古くなっています．最新のものにしてください．</b>
+</p>
+
+<p>
+<a href="https://getcomposer.org/">Composer</a> は PHP のパッケージマネージャです．
+Drupal 自身の依存関係管理や <a href="http://www.drush.org/en/master/make/">Drush make</a> に似た機能を提供しますが，
+Drupal のモジュールだけでなく，どのプロジェクトにも使用できます．
+多くの Drupal 8 のモジュールは，
+Composer を使用してサイトのコードベースに組み込む必要のある一般的な PHP パッケージに依存しています．
+</p>
+</div>
+
+<div id="outline-container-org3d95540" class="outline-3">
+<h3 id="org3d95540">Which modules have Composer dependencies?</h3>
+<div class="outline-text-3" id="text-org3d95540">
+<p>
+モジュールに Composer の依存関係があるかどうかを確認する方法はいくつかあります．
+</p>
+
+<ul class="org-ul">
+<li>プロジェクトのページ，README，または INSTALL ファイルといった文書</li>
+<li>ルートディレクトリに含まれる `comporser.json` ファイル</li>
+<li>一度，<a href="https://www.drupal.org/node/2494073">#2494073: Mark modules with unmet composer dependencies uninstallable</a> で修正され，
+Drupal コアがこのようなモジュールを自動的に通知</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org724f7e6" class="outline-3">
+<h3 id="org724f7e6">How to install module's Composer dependencies</h3>
+<div class="outline-text-3" id="text-org724f7e6">
+</div><div id="outline-container-org7355ddf" class="outline-4">
+<h4 id="org7355ddf">Through Composer</h4>
+<div class="outline-text-4" id="text-org7355ddf">
+<p>
+Composer を使用すると，モジュールの Composer の依存関係を直接インストールできます．
+これは，<a href="https://www.drupal.org/node/2718229">drupal.org Packagist</a>，または<a href="https://packagist.drupal-composer.org/">drupal Packagist</a> を使用しても可能です．
+</p>
+</div>
+</div>
+
+<div id="outline-container-org18af180" class="outline-4">
+<h4 id="org18af180">Through Composer Manager</h4>
+<div class="outline-text-4" id="text-org18af180">
+<p>
+Composer Manager は，モジュールがもつComposerの依存関係のインストールを自動化するのに役立つ小さなモジュールです．
+その <a href="https://www.drupal.org/node/2405811">説明書</a> では、その使い方を説明しています．
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div id="postamble" class="status">
 <p class="validation"></p>
 </div>

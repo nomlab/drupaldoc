@@ -231,7 +231,82 @@ for the JavaScript code in this tag.
 </div><div id="content">
 <header>
 <h1 class="title">Translating site interfaces</h1>
-</header></div>
+</header><ul class="org-ul">
+<li>このページの原文: [[<a href="https://www.drupal.org/docs/8/multilingual/translating-site-interfaces%5D%5BTranslating">https://www.drupal.org/docs/8/multilingual/translating-site-interfaces][Translating</a> site interfaces</li>
+</ul>
+<p>
+]]
+</p>
+<div id="outline-container-org7fa88fe" class="outline-2">
+<h2 id="org7fa88fe">Translating site interfaces</h2>
+<div class="outline-text-2" id="text-org7fa88fe">
+<p>
+この機能が使えるようになると，core の <i>Interface Translation module</i> (Drupal 8 より前のバージョンでは「ロケール」と呼ばれていた機能)」のモジュールを用いると，デフォルト(英語)以外の言語でDrupalのサイトを利用できます．
+</p>
+
+<p>
+マルチリンガルなWebサイトを設定したり，あなたのサイトのためにカスタマイズされたテキストを用いてインタフェーステキストの要素を置き換えるために，これを使えます．
+<i>Interface Translation module</i> がテキストに出会ったときはいつも，現在選択されている言語にそれを翻訳します．
+もし，翻訳が利用できないなら，その文字列は覚えられていて，このため，翻訳されていない文字列を簡単に探し出すことができます．
+</p>
+
+<p>
+ローカライゼーションアップデートモジュールは <a href="http://localize.drupal.org">http://localize.drupal.org</a> から自動的に翻訳を検索することができます．
+すでに翻訳が完了している言語に対して，あなたはこのモジュールを設定する以外のことをすべきではありません．
+Drupal 6 や 7では，ローカライゼーションアップデートモジュールは抵抗されているモジュールです．
+Drupal 8 では，これはコアです．
+</p>
+
+<p>
+<i>Interface Translation module</i> は翻訳を低張するために2つのオプションを提供しています．
+1つ目は翻訳できない文字列を探すためや，それらの翻訳を記述するために使えるWebインタフェースを統合します．
+より簡単でより少ない時間経過の方法は存在しているあなたの言語への翻訳をインポートすることです．
+これらの翻訳はGNUの <i>GNU gettext Potable Object files</i> (.po ファイルと呼ぶ．)として利用可能です．
+Drupal翻訳サーバから翻訳ファイルをダウンロードできます．
+</p>
+
+<p>
+もし存在する翻訳があなたのニーズに合わなければ，.poファイルを特別な編集ツールを用いて編集します．
+翻訳インタフェースモジュールのインポート機能を用いると，あなたのサイトのデータベース内のそのようなファイルから文字列を追加できます．
+エクスポート機能を用いるとあなたのサイトの文字列から <i>Portable Object</i> ファイルを生成し，あなたの翻訳を他人と共有できます．
+</p>
+
+<p>
+ノート: <i>Interface Translation module</i> そのものを有効にすることはサイトに対する翻訳を作ったり加えたりすることではありません． <i>Translate Interface</i> オプションを使って翻訳をインポートしたり文字列翻訳を作成する必要があります(Drupal 6 以降 の Drupal core の <i>Content Translation</i> モジュールによって提供されています．)．
+</p>
+
+<p>
+テキストの方向が右から左のWebサイトを作成したいなら，ガーランドのコアテーマのような，これをサポートするテーマが必要です．
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4723d10" class="outline-2">
+<h2 id="org4723d10">Register a string with the Translate interface UI</h2>
+<div class="outline-text-2" id="text-org4723d10">
+<p>
+コアまたはコントリビュートされたモジュールによって提供された文字列が <i>Translate interface</i> UI上に表示されることが期待され，表示されない場合，その文字列は Drupal 内に登録されていないことがよくあります．
+</p>
+
+<p>
+  したがって，翻訳されていない文字列が存在する場合(例: 'this text')では，デフォルト以外の言語で問題のテキストを表示するURLにアクセスする必要があります．
+たとえば，'this text' が /some/path に表示されている場合，別の言語に切り替えてから /some/path にアクセスしてください．
+</p>
+
+<p>
+これは 'this text'という文字列を登録するため，admin/build/translate/search の <i>Translate interface</i> UIを使うことができます．
+</p>
+
+<p>
+Drupalで多言語サイトを設定する際に役立つ資料については，「リソースガイド：多言語サイトの設定」を参照してください．
+</p>
+
+<p>
+また，localize.drupal.org の翻訳のセキュリティへの影響についても読んでください．
+</p>
+</div>
+</div>
+</div>
 <div id="postamble" class="status">
 <p class="validation"></p>
 </div>
