@@ -1,2 +1,72 @@
 #+TITLE: Getting started with Drupal 8 administration
 #+SETUPFILE: ../../../options/default.org
+
++ このページの原文: [[https://www.drupal.org/docs/8/administering-drupal-8-site/getting-started-with-drupal-8-administration][Getting started with Drupal 8 administration]]
+
+* Getting started with Drupal 8 administration
+
+  このセクションでは，新しい Drupal8 ユーザのためにサイト管理を紹介します．
+ここでは，管理者アカウントの使用方法と何から取り掛かるべきかを説明します．
+
+** Understanding the administrator account
+
+インストール処理が終わると，インストールを行ったユーザが，管理者として自動的にサイトにログインします．
+User1 という管理者アカウントが表示されるでしょう．
+この管理者アカウントは，コンテンツの管理およびサイト管理のためのすべての権限が自動的に与えられます，
+ベストプラクティスはこのアカウントを共有することではありません．
+特定の役割に割り当てることによって，ユーザに常に権限を与えることができます．
+
+** Where to start
+
+管理者は，通常，新しいサイトでは以下のようなことに対処する必要があります．
+
+*** Check your site's status
+
+Menu > Reports > Status report (admin/reports/status) の順番で Status report を開いて，サイトの現在のステータスの概要を表示します．
+Drupal のバージョン，データベースのバージョン，PHP のバージョン，PHP のメモリ制限，Web サーバーの情報，潜在的なセキュリティの問題を確認できます．
+赤い背景の項目は，すぐに注意が必要な問題です．
+たとえば，Drupal コアまたはインストールされているモジュール，または保護されていない settings.php ファイルのセキュリティアップデートが必要です（詳細は， [[https://www.drupal.org/node/244924][What permissions does Drupal need?]] を参照してください）．
+Status report ページには，[[https://www.drupal.org/cron][cronスクリプト]] が最後にいつ実行されたかも表示されます． このスクリプトは，サイトが正常に機能するためには定期的に実行する必要があります．
+
+*** Configure your site information
+
+Menu > Configuration > Site information (admin/config/system/site-information) の順番で Site information を開き，サイト名，スローガン，電子メールアドレス，またはデフォルトのフロントページパスなどの基本設定を表示します．
+
+*** Manage users
+
+新しいユーザを追加したり，既存のユーザを管理するには，Menu > People (admin/people) からPeopleページを開きます．
+このページの Permissions タブをクリックすると，ユーザの役割と権限を管理できます．
+ユーザがアカウントを申請するプロセスを変更するには，Menu > Configuration > People > Account settings (admin/config/people/accounts）の順番で People and Permissions ページにアクセスします．
+ユーザ，役割，および権限の詳細については，[[https://www.drupal.org/node/120614][こちら]] をご覧ください．
+
+*** Add additional functionality
+
+モジュールを有効にすると，Drupal の機能を拡張できます．
+標準の Drupal のインストールでは，有効にすればすぐに機能するモジュールがいくつか付属します．
+さらに，コミュニティが提供する（contrib）モジュールをダウンロードすることもできます．
+Menu > Extend (admin/modules) で Extend ページを開き，モジュールを管理します．
+追加のモジュールは，Drupal.org の [[https://www.drupal.org/project/Modules][Modules]] セクションからダウンロードできます．
+提供されているモジュールのインストールの詳細については，[[https://www.drupal.org/node/1897420][こちら]] をご覧ください．
+
+*** Working with Search
+
+検索モジュールを使用すると，ユーザはサイトの特定のコンテンツを検索できます．
+ユーザーと特定の単語の両方を検索できます．
+Search の content タブ上では，サイトのノードコンテンツのデフォルトレンダリングに表示される単語を検索できます．
+これには，コメントと同様に，CCK フィールド，Location フィールド，Taxonomy などが含まれます．
+Search の users タブ上では，サイトの登録されているユーザの名前，権限を有していれば，そのユーザのメールアドレスを検索することができます．
+Search の使用方法の詳細については，[[https://drupal.org/documentation/modules/search][こちら]] をご覧ください．
+
+*** Customize the site appearance
+
+サイトの外観を変更したいときは，Menu > Appearance (admin/appearance) で Appearance ページを開き，新しいテーマをインストールするかテーマ設定を編集します．
+デフォルトでは，Drupal は数個のテーマを提供します．オリジナルのテーマを作成したり，[[https://www.drupal.org/project/themes][Drupal.orgで公開されたテーマ]] を見つけることができます．
+Drupal のテーマの詳細については，[[https://www.drupal.org/node/221881][こちら]] をご覧ください．
+
+*** Manage the site structure
+
+サイトの適切な変更を管理して，サイトのコンテンツタイプ，ブロックレイアウト，メニュー，タクソノミ，ビュー，表示モード，コンタクトフォームの構造を変更するには，
+Menu > Structure (admin/structure) で Structure ページを開き，サイトの構造を変更できます．
+たとえば，サイトのコンテンツタイプ，ブロックレイアウト，メニュー，Taxonomy，ニュー，表示モード，およびコンタクトフォームの構造を変更できます．
+デフォルトでDrupalはサイトのいくつかの構造コンポーネントを提供します．
+Drupal の構造の詳細については，[[https://www.drupal.org/documentation/structure][こちら]] をご覧ください．
